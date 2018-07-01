@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="final_score">Your score is : </string>
+    <string name="hint_text">Enter Your Ans Here</string>
+    <string name="total_que">Total Number of questions : 10</string>
+    <string name="submit">submit</string>
+</resources>

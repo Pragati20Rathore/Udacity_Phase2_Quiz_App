@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen_5"
+    android:background="@color/colorWhite">
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:gravity="end"
+        android:text="@string/total_que"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/font_size_14"
+        android:textStyle="bold"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/quiz_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_heading"
+        android:layout_above="@+id/final_score"
+        android:layout_alignWithParentIfMissing="true">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/submit_btn"
+        android:gravity="center"
+        android:textSize="@dimen/font_size_20"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:id="@+id/final_score"
+        android:visibility="gone"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/submit"
+        android:textAllCaps="true"/>
+</RelativeLayout>
