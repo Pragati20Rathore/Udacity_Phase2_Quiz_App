@@ -68,6 +68,8 @@ public class quizAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
                 return new ViewHolderFillBlank(blankQueView);
 
             default:
+
+                
         }
         return null;
     }
