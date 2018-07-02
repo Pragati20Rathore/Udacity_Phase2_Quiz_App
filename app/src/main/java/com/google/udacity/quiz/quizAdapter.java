@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +22,6 @@ public class quizAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
     private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<Quiz> mList;
-    HashMap<Integer, String> dummyTrial = new HashMap<Integer, String>();
 
     private static final int TYPE_CHECKBOX = 1;
     private static final int TYPE_RADIO = 2;
@@ -68,8 +68,6 @@ public class quizAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
                 return new ViewHolderFillBlank(blankQueView);
 
             default:
-
-                
         }
         return null;
     }
@@ -95,7 +93,17 @@ public class quizAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
             default:
                 break;
         }
+
+        Toast.makeText(mContext, "Test Call", Toast.LENGTH_SHORT).show();
     }
+//
+//    public void tryToFetchResp(RecyclerView.ViewHolder holder, ) {
+//        for (int i = 0; i <= mList.size(); i++) {
+//            if (i == holder.getLayoutPosition()) {
+//
+//            }
+//        }
+//    }
 
     private void initLayoutCheckBox(ViewHolderCheckBox holder, int pos) {
         Quiz quizItem = mList.get(pos);
@@ -131,24 +139,6 @@ public class quizAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
 
         holder.tv_fill_blank.setText(quizItem.getQuestion());
         holder.tv_fill_blank.setTag(pos);
-
-//        holder.tv_fill_blank.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                String inputAns = holder.tv_fill_blank.getText().toString();
-//                onTextChangeListener(inputAns, (Integer) holder.tv_fill_blank.getTag());
-//            }
-//        });
     }
 
     @Override
@@ -163,46 +153,33 @@ public class quizAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> i
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        switch (buttonView.getId()) {
-            case R.id.cb_one:
-                int position1 = (int) buttonView.getTag();
-                dummyTrial.put(position1, (String) buttonView.getText());
-                break;
-            case R.id.cb_two:
-                int position2 = (int) buttonView.getTag();
-                dummyTrial.put(position2, (String) buttonView.getText());
-                break;
-            case R.id.cb_three:
-                int position3 = (int) buttonView.getTag();
-                dummyTrial.put(position3, (String) buttonView.getText());
-                break;
-            case R.id.cb_four:
-                int position4 = (int) buttonView.getTag();
-                dummyTrial.put(position4, (String) buttonView.getText());
-                break;
-            case R.id.rb_one:
-                int position5 = (int) buttonView.getTag();
-                dummyTrial.put(position5, (String) buttonView.getText());
-                break;
-            case R.id.rb_two:
-                int position6 = (int) buttonView.getTag();
-                dummyTrial.put(position6, (String) buttonView.getText());
-                break;
-        }
-
-//        if (dummyTrial.size() == 10) {
-//            if (mListner != null) {
-//                mListner.enableSubmitBtn(true);
-//
-//                for (Integer position : dummyTrial.keySet()) {
-//
-//                    String key = position.toString();
-//                    String value = dummyTrial.get(position).toString();
-//                    System.out.println(key + " " + value);
-//                    Toast.makeText(mContext, "" + "" + key + " " + value, Toast.LENGTH_SHORT).show();
-//                }
-//            }
+//        switch (buttonView.getId()) {
+//            case R.id.cb_one:
+//                int position1 = (int) buttonView.getTag();
+//                dummyTrial.put(position1, (String) buttonView.getText());
+//                break;
+//            case R.id.cb_two:
+//                int position2 = (int) buttonView.getTag();
+//                dummyTrial.put(position2, (String) buttonView.getText());
+//                break;
+//            case R.id.cb_three:
+//                int position3 = (int) buttonView.getTag();
+//                dummyTrial.put(position3, (String) buttonView.getText());
+//                break;
+//            case R.id.cb_four:
+//                int position4 = (int) buttonView.getTag();
+//                dummyTrial.put(position4, (String) buttonView.getText());
+//                break;
+//            case R.id.rb_one:
+//                int position5 = (int) buttonView.getTag();
+//                dummyTrial.put(position5, (String) buttonView.getText());
+//                break;
+//            case R.id.rb_two:
+//                int position6 = (int) buttonView.getTag();
+//                dummyTrial.put(position6, (String) buttonView.getText());
+//                break;
 //        }
+
     }
 
     //inflates the view groups used in holder view
